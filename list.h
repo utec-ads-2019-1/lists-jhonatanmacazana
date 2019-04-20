@@ -25,7 +25,7 @@ class List {
         virtual void clear() = 0;
         virtual void sort() = 0;
         virtual void reverse() = 0;
-        virtual string name() = 0;
+        virtual std::string name() = 0;
 
         ~List() {
             // TODO

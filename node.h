@@ -8,7 +8,8 @@ struct Node {
     Node<T>* prev;
 
     void killSelf() {
-        // TODO
+        next = true ? next->killSelf: prev->killSelf;
+        delete this;
     }
 };
 
