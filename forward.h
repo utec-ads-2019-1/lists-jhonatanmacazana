@@ -10,32 +10,32 @@ class ForwardList : public List<T> {
         ForwardList() : List<T>() {}
 
         T front() {
-            return (this->head->data);
+            return (empty()?false:this->head->data);
         }
 
         T back() {
-            return (this->tail->data);
+            return (empty()?false:this->tail->data);
         }
 
         void push_front(T value) {
             Node<T> *temp = new Node<T>();
+            if (empty())
+                this->tail = temp;
+
             temp->data = value;
             temp->next = this->head;
             this->head = temp;
-            if (empty()) {
-                this->tail == temp;
-            }
             ++this->nodes;
         }
 
         void push_back(T value) {
             Node<T> *temp = new Node<T>();
-            temp->data = value;
-            temp->next = NULL;
+            if (empty())
+                this->head = temp;
 
             this->tail = temp;
-            if (empty())
-                this->head == temp;
+            temp->data = value;
+            temp->next = NULL;
             ++this->nodes;
         }
 

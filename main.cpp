@@ -13,20 +13,31 @@ int main(int argc, char *argv[]) {
 
     ForwardList<int> *list = new ForwardList<int>();
 
-    cout << list->front() << endl;
+
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
     list->push_front(16);
-    cout << "Front(): " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
     list->push_front(10);
-    cout << "Front(): " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
     list->pop_front();
-    cout << "Front(): " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
     list->pop_front();
-    cout << "Front(): " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    list->push_back(18);
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    list->push_back(23);
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    list->push_back(76);
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    list->push_back(95);
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    list->push_front(10);
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
     list->pop_front();
-    cout << "Front(): " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
-
-
-    cout << endl;
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
+    //list->pop_back();
+    list->pop_front();
+    cout << "Front: " << list->front() << "    Back: " << list->back() << "    Size: " << list->size() << endl;
 
 
     return EXIT_SUCCESS;
