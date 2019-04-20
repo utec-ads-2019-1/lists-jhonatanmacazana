@@ -7,8 +7,8 @@ struct Node {
     Node<T>* next;
     Node<T>* prev;
 
-    void killSelf() {
-        if (next != NULL) next->killSelf();
+    void killSelf(int counter) {
+        if (counter > 1) next->killSelf(counter-1);
         delete this;
     }
 };
