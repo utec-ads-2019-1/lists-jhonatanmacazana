@@ -28,7 +28,10 @@ class List {
         virtual std::string name() = 0;
 
         ~List() {
-            // TODO
+            this->head->killSelf();
+            this->head = NULL;
+            this->tail = NULL;
+            this->nodes = 0;
         }
 };
 
