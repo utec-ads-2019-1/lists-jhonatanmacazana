@@ -24,13 +24,14 @@ public:
         {
             this->tail = tempNode;
             tempNode->next = NULL;
+            this->head = tempNode;
         }
         else
         {
             tempNode->next = this->head;
+            this->head = tempNode;
         }
         tempNode->data = value;
-        this->head = tempNode;
         ++this->nodes;
     }
 
@@ -70,18 +71,12 @@ public:
     }
 
     T operator[](int index) {
-        try {
-            if (index >= size())
-                throw - 1;
-            Node<T> *tempNode = this->head;
-            for (int i = 0; i < index; i++)
-                tempNode = tempNode->next ;
-            return tempNode->data ;
-        }
-        catch (int e) {
-            std::cerr << "Size error in the operator[]" << std::endl;
-        }
-
+        if (index >= size())
+            throw;
+        Node<T> *tempNode = this->head;
+        for (int i = 0; i < index; i++)
+            tempNode = tempNode->next ;
+        return tempNode->data ;
     }
 
     bool empty() {
