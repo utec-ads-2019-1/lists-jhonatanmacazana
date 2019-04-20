@@ -4,7 +4,7 @@ void Tester::execute() {
     Collection collections[] = { forward_list, linked_list, circular_list };
     size_t numberOfCollections = sizeof(collections) / sizeof(collections[0]);
 
-    for (int i = 0; i < numberOfCollections; i++) {
+    for (int i = 0; i < numberOfCollections-1; i++) {
         for (int j = 0; j < NUMBER_OF_TESTS; ++j) {
             testList<int>(collections[i]);
             testList<char>(collections[i]);
@@ -60,7 +60,7 @@ void Tester::testList(Collection collection) {
     list->pop_back();
     ASSERT(list->size() == 4, "The " + list->name() + " pop_back is not working");
     ASSERT(list->back() == elements[4], "The " + list->name() + " back is not working");
-    
+
     list->reverse();
 
     ASSERT(list->back() == elements[1], "The " + list->name() + " reverse is not working");
