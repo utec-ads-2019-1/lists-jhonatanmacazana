@@ -146,8 +146,14 @@ public:
         return ForwardIterator<T> (NULL);
     }
 
-    void merge(ForwardList<T> list) {
-        // TODO
+    void merge(ForwardList<T> &list) {
+        if (list.empty()) return;
+        if (size() == 0)
+            this->head = list.head;
+        else
+            this->tail->next = list.head;
+        this->tail = list.tail;
+        this->nodes += list.nodes;
     }
 };
 

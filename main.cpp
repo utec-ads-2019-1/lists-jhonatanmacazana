@@ -1,6 +1,6 @@
 #include <iostream>
 #include "forward.h"
-//#include "test/tester.h"
+#include "test/tester.h"
 
 using namespace std;
 
@@ -9,8 +9,8 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    //Tester::execute();
-
+    Tester::execute();
+/*
     ForwardList<int> list;
 
 
@@ -53,6 +53,6 @@ int main(int argc, char *argv[]) {
     cout << list[2] << endl;
     cout << list[3] << endl;
     cout << list[4] << endl;
-
+*/
     return EXIT_SUCCESS;
 }

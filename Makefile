@@ -4,11 +4,8 @@ CFLAGS = -c -Wall
 
 all: run
 
-run: main.o
-	$(CC) main.o -o run
-
-main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp
+run:
+	$(CC) main.cpp mock/mocker.cpp test/tester.cpp -o run
 
 .PHONY : clean
 clean:
