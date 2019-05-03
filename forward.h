@@ -10,10 +10,16 @@ class ForwardList : public List<T> {
 public:
     ForwardList() : List<T>() {}
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T front() {
         return (empty() ? false : this->head->data);
     }
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T back() {
         return (empty() ? false : this->tail->data);
     }
@@ -141,6 +147,9 @@ public:
         return ForwardIterator<T> (NULL);
     }
 
+    /*
+    * Está bien, perdo deberías agregar los elementos para no tener los elementos originales de la segunda lista
+    * */
     void merge(ForwardList<T> &list) {
         if (list.empty()) return;
         if (size() == 0)

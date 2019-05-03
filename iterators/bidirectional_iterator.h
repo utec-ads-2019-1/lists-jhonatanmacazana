@@ -11,6 +11,7 @@ class BidirectionalIterator : public Iterator<T> {
 
         BidirectionalIterator<T> operator=(BidirectionalIterator<T> other) {
             this->current = other.current;
+            // Falta return
         }
 
         bool operator!=(BidirectionalIterator<T> other) {

@@ -9,10 +9,16 @@ class LinkedList : public List<T> {
 public:
     LinkedList() : List<T>() {}
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T front() {
         return (empty() ? false : this->head->data);
     }
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T back() {
         return (empty() ? false : this->tail->data);
     }
@@ -144,6 +150,9 @@ public:
         return BidirectionalIterator<T> (NULL);
     }
 
+     /*
+    * Está bien, perdo deberías agregar los elementos para no tener los elementos originales de la segunda lista
+    * */
     void merge(LinkedList<T> &list) {
         if (list.empty()) return;
         if (size() == 0)

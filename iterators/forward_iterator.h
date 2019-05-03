@@ -11,6 +11,7 @@ class ForwardIterator : public Iterator<T> {
 
         ForwardIterator<T> operator=(ForwardIterator<T> other) {
             this->current = other.current;
+            // Falta return
         }
 
         bool operator!=(ForwardIterator<T> other) {

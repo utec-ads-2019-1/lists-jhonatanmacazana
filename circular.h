@@ -8,10 +8,16 @@ class CircularLinkedList : public List<T> {
 public:
     CircularLinkedList() : List<T>() {}
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T front() {
         return (empty() ? false : this->head->data);
     }
 
+    /*
+    * Aquí no deberías retornar false, sino botar una excepción
+    */
     T back() {
         return (empty() ? false : this->tail->data);
     }
@@ -92,6 +98,7 @@ public:
     }
 
     bool empty() {
+        // Podría ser return this->head == nullptr;
         return (this->head == NULL ? true : false);
     }
 
@@ -153,6 +160,9 @@ public:
         return BidirectionalIterator<T> (this->head);
     }
 
+    /*
+    * Está bien, perdo deberías agregar los elementos para no tener los elementos originales de la segunda lista
+    * */
     void merge(CircularLinkedList<T> &list) {
         if (list.empty()) return;
         if (size() == 0)
